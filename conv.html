@@ -1,0 +1,49 @@
+
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>Comment/Chat/Blog</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="lfAnalyticsDelegate.js"></script>
+        <script type="text/javascript" src="http://cdn.livefyre.com/Livefyre.js"></script>
+    </head>
+    <body>
+
+    <div id="lf-conv"></div>
+    <script type="text/javascript">
+
+        var networkConfig = {
+            network: 'umg.fyre.co'
+        };
+
+        var convConfig = {
+            siteId: '',
+            articleId: '',
+            el: 'lf-conv'
+        };
+
+		Livefyre.require(
+			['fyre.conv#3'],
+			function(Conv){
+				var conv = new Conv(networkConfig,[convConfig],function(widget){
+                    // Offical Livefyre Events: 
+                    // http://answers.livefyre.com/developers/reference/javascript-events/
+					widget.on('commentPosted', trackingDelegate.Core.commentPosted);
+					widget.on('commentFlagged', trackingDelegate.Core.commentFlagged);
+					widget.on('commentLiked', trackingDelegate.Core.commentLiked);
+                    widget.on('commentShared', trackingDelegate.Core.commentShared);
+                    widget.on('userLoggedIn', trackingDelegate.Core.userLoggedIn);
+                    widget.on('userLoggedOut', trackingDelegate.Core.userLoggedOut);
+                    widget.on('socialMention', trackingDelegate.Core.socialMention);
+				});
+                
+                // Non-official events for Reviews
+                // User clicks media attachment
+                $('#livefyre').on('click', '.fyre-comment-media-expanded a', trackingDelegate.Core.attachmentClicked);
+			}
+		);
+
+    </script>
+    
+    </body>
+</html>

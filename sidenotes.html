@@ -1,0 +1,44 @@
+
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>Sidenotes</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="lfAnalyticsDelegate.js"></script>
+        <script type="text/javascript" src="http://cdn.livefyre.com/Livefyre.js"></script>
+    </head>
+    <body>
+
+    <div id="content">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+    </div>
+    <script type="text/javascript">
+
+        var convConfig = {
+            network: 'umg.fyre.co',
+            siteId: '',
+            articleId: '',
+            selectors:'#content > p'
+        };
+
+        Livefyre.require(
+            ['sidenotes#1'], 
+            function (Sidenotes) {
+                var sidenotes = new Sidenotes(convConfig);
+                    // Offical Livefyre Events: 
+                    // http://answers.livefyre.com/developers/app-integrations/sidenotes/#AppEvents
+                    sidenotes.on('sidenotes.commentFlagged', trackingDelegate.Sidenotes.commentFlagged);
+                    sidenotes.on('sidenotes.commentPosted', trackingDelegate.Sidenotes.commentPosted);
+                    sidenotes.on('sidenotes.commentVoted', trackingDelegate.Sidenotes.commentVoted);
+                    sidenotes.on('sidenotes.commentShared', trackingDelegate.Sidenotes.commentShared);
+                    sidenotes.on('sidenotes.userLoggedIn', trackingDelegate.Sidenotes.userLoggedIn);
+                    sidenotes.on('sidenotes.userLoggedOut', trackingDelegate.Sidenotes.userLoggedOut);
+            }
+        );
+
+    </script>
+    
+    </body>
+</html>

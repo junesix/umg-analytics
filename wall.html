@@ -1,0 +1,60 @@
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>Media Wall</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="lfAnalyticsDelegate.js"></script>
+        <script type="text/javascript" src="http://cdn.livefyre.com/Livefyre.js"></script>
+    </head>
+    <body>
+
+    <div id="lf-wall"></div>
+    <script type="text/javascript">
+
+        var collectionConfig = {
+            network: 'umg.fyre.co',
+            siteId: '',
+            articleId: ''
+        };
+
+        Livefyre.require(
+            ['streamhub-wall#3','streamhub-sdk#2'],
+            function(Wall, SDK){
+                var collection = new SDK.collection(collectionConfig);
+                var wall = new Wall({
+                    el: document.getElementById('lf-wall'),
+                    collection: collection
+                });
+
+                // Non-official events for Media Wall
+                
+                // User clicked item in Wall
+                $('#lf-wall').on('click', '.content-attachment-frame', trackingDelegate.MediaWall.contentClicked);
+                // User clicked Load More
+                $('body').on('mouseup', '.hub-list-more', trackingDelegate.MediaWall.loadMoreClicked);
+                // User clicked Close Modal
+                $('body').on('mouseup', '.hub-modal-close', trackingDelegate.MediaWall.closeModal);
+                // Twitter: reply
+                $('#livefyre').on('click', '.hub-content-action-reply', trackingDelegate.MediaWall.twitterReply);
+                // Twitter: retweet
+                $('#livefyre').on('click', '.hub-content-action-retweet', trackingDelegate.MediaWall.twitterRetweet);
+                // Twitter: favorite
+                $('#livefyre').on('click', '.hub-content-action-favorite', trackingDelegate.MediaWall.twitterFavorite);
+                // All other: like
+                $('#livefyre').on('click', '.hub-content-like', trackingDelegate.MediaWall.contentLike);
+                // All other: share
+                $('#livefyre').on('click', '.hub-content-share', trackingDelegate.MediaWall.contentShare);
+
+                // Gallery view: previous
+                //$('body').on('mouseup', '.content-attachments-gallery-prev', function(d){console.dir(d)});
+                // Gallery view: next
+                //$('body').on('mouseup', '.content-attachments-gallery-next', function(d){console.dir(d)});
+                
+                
+            }
+        );
+
+    </script>
+    
+    </body>
+</html>
