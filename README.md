@@ -7,6 +7,12 @@
 * __[wall.html](wall.html)__ - Example for media wall / feed apps (anything using ContentListView)
 
 
+### Related Links
+
+* __[Livefyre JS Events](http://answers.livefyre.com/developers/reference/javascript-events/)__
+* __[Sidenotes Events](http://answers.livefyre.com/developers/app-integrations/sidenotes/#AppEvents)__
+
+
 ## Core Apps
 
 Request | Status | trackingDelegate Function | Type | Meaning
