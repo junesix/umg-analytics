@@ -51,13 +51,13 @@ Number of flags | :white_check_mark: | trackingDelegate.Sidenotes.commentFlagged
 
 Request | Status | trackingDelegate Function | Type | Meaning
 ------- | ------ | ------------------------- | ---- | -------
-Click on item | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.contentClicked | Unofficial | User clicked on an item in the wall
-Load more clicked | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.loadMoreClicked | Unofficial | User clicked the load more button
-Twitter reply | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.twitterReply | Unofficial | User clicked reply to a Tweet on the wall
-Twitter retweet | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.twitterRetweet | Unofficial | User clicked retweet on a Tweet on the wall
-Twitter favorite | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.twitterFavorite | Unofficial | User clicked favorite on a Tweet on the wall
-Share item | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.contentShare | Unofficial | User clicked share on a non-Twitter item on the wall
-Like Item | :white_check_mark: | trackingDelegate.Sidenotes.MediaWall.contentLike | Unofficial | User clicked share on a non-Twitter item on the wall
+Click on item | :white_check_mark: | trackingDelegate.MediaWall.contentClicked | Unofficial | User clicked on an item in the wall
+Load more clicked | :white_check_mark: | trackingDelegate.MediaWall.loadMoreClicked | Unofficial | User clicked the load more button
+Twitter reply | :white_check_mark: | trackingDelegate.MediaWall.twitterReply | Unofficial | User clicked reply to a Tweet on the wall
+Twitter retweet | :white_check_mark: | trackingDelegate.MediaWall.twitterRetweet | Unofficial | User clicked retweet on a Tweet on the wall
+Twitter favorite | :white_check_mark: | trackingDelegate.MediaWall.twitterFavorite | Unofficial | User clicked favorite on a Tweet on the wall
+Share item | :white_check_mark: | trackingDelegate.MediaWall.contentShare | Unofficial | User clicked share on a non-Twitter item on the wall
+Like Item | :white_check_mark: | trackingDelegate.MediaWall.contentLike | Unofficial | User clicked share on a non-Twitter item on the wall
 Media wall log-in | :x: | n/a | Unofficial | User logged in via the wall
 
 ## Maps
