@@ -26,7 +26,7 @@ Number of shares | :white_check_mark: | trackingDelegate.Core.commentShared | Of
 Number of flags | :white_check_mark: | trackingDelegate.Core.commentFlagged | Official | User flagged a comment in an app
 Clicks on blog post items | :white_check_mark: | trackingDelegate.Core.attachmentClicked | Unofficial | User clicked a media item
 User logged out | :white_check_mark: | trackingDelegate.Core.userLoggedOut | Official | User logged out of the app
-
+N/A | N/A | trackingDelegate.Core.showMore | Official | User clicked Show More button
 
 ## Reviews
 
